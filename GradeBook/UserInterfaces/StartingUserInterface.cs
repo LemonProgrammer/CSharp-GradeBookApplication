@@ -39,13 +39,14 @@ namespace GradeBook.UserInterfaces
                 return;
             }
             var name = parts[1];
+
             BaseGradeBook gradeBook;
 
-            if(parts[3].ToString().Equals("standard"))
+            if(parts[2].ToString().Equals("standard"))
             {
                 gradeBook = new StandardGradeBook(name);
             }
-            else if (parts[3].ToString().Equals("ranked"))
+            else if (parts[2].ToString().Equals("ranked"))
             {
                 gradeBook = new RankedGradeBook(name);
             }
@@ -62,7 +63,7 @@ namespace GradeBook.UserInterfaces
         public static void LoadCommand(string command)
         {
             var parts = command.Split(' ');
-            if (parts.Length != 3)
+            if (parts.Length != 2)
             {
                 Console.WriteLine("Command not valid, Load requires a name.");
                 return;
